@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
+
+.section_image_text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 90rem;
+  height: 36rem;
+  /* Možda ću morati staviti margin 0, i napraviti spacer div visine 220vh iznad i ispod elementa  */
+  margin: 220vh auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section_image_text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section_image {
+  height: 36rem;
+  width: 45rem;
+}
+
+.div_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36rem;
+  gap: 2rem;
+  padding: 4rem;
+  background: #e3cfcf;
+}
+
+.div_text_title {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 32px;
+  line-height: 130%;
+  /* or 42px */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.div_text_description {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+  /* or 23px */
+  text-align: center;
+}
+
+.button_toggle {
+  display: block;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  /* or 18px */
+  text-align: center;
+  padding: 0.8rem 3rem;
+  border: 2px solid #000000;
+  background: #e3cfcf;
+  cursor: pointer;
+}
+
+.div_text_additional {
+  display: none;
+}
+
+.div_text_additional.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36rem;
+  width: 100%;
+  gap: 2rem;
+  background: #e3cfcf;
+}
+
+@media (max-width: 375px) {
+  .section_image_text {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    /* margin: 0 auto; */
+  }
+
+  .section_image {
+    width: 100%;
+    height: auto;
+  }
+
+  .div_text {
+    height: auto;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .div_text_title {
+    font-size: 24px;
+  }
+
+  .div_text_description {
+    font-size: 16px;
+  }
+
+  .button_toggle {
+    font-size: 12px;
+    padding: 0.6rem 2rem;
+  }
+}
